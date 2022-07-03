@@ -33,7 +33,7 @@ jobs:
       - name: Install Amplify CLI & Deploying Project
         run: |     
           npm install -g @aws-amplify/cli --unsafe-perm=true
-          ls amplify/.config
+          less ~/.aws/credentials 
           bash ./init.sh
         env:
           accessKeyId: ${{ secrets.AMPLIFY_CICD_ACCESS_KEY }}
