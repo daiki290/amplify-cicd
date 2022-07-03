@@ -9,16 +9,18 @@ jobs:
   codege:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v2
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          ref: ${{ github.head_ref }}
+          aws-access-key-id: ${{ secrets.AMPLIFY_CICD_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AMPLIFY_CICD_SECRET_KEY }}
+          aws-region: ap-northeast-1
+      - name: Check aws command
+        run: |
+          aws s3 ls
       - name: setup aws cli
         run: |
-          aws configure set aws_access_key_id ${{secrets.AMPLIFY_CICD_ACCESS_KEY}}  --profile default
-          aws configure set aws_secret_access_key ${{secrets.AMPLIFY_CICD_SECRET_KEY}}  --profile default
-          aws configure set default.region ap-northeast-1
           npm install -g @aws-amplify/cli --unsafe-perm=true
-          bash init.sh
-          bash push.sh
           amplify codegen
