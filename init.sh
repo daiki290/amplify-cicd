@@ -36,8 +36,8 @@ PROVIDERS="{\
 
 CODEGEN="{\
 \”generateCode\”:true,\
-\”codeLanguage\”:\”javascript\”,\
-\”fileNamePattern\”:\”src/graphql/**/*.js\”,\
+\”codeLanguage\”:\”typescript\”,\
+\”fileNamePattern\”:\”src/graphql/**/*.ts\”,\
 \”generatedFileName\”:\”API\”,\
 \”generateDocs\”:true\
 }”
@@ -46,5 +46,4 @@ amplify init \
 --amplify $AMPLIFY \
 --frontend $FRONTEND \
 --providers $PROVIDERS \
---codegen $CODEGEN \
 --yes
