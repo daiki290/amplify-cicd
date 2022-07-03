@@ -34,6 +34,14 @@ PROVIDERS="{\
 \"awscloudformation\": $AWSCLOUDFORMATIONCONFIG \
 }"
 
+CODEGEN="{\
+\"”generateCode\":true,\
+\"codeLanguage\":\"typescript\",\
+\"fileNamePattern\":\"src/graphql/**/*.ts\",\
+\"generatedFileName\":\"API\",\
+\"generateDocs\":true\
+}"
+
 amplify init \
 --amplify $AMPLIFY \
 --frontend $FRONTEND \
@@ -46,4 +54,4 @@ amplify configure project \
 --providers $PROVIDERS \
 --yes
 
-amplify push --yes
+amplify push --codegen $CODEGEN --yes
