@@ -17,26 +17,21 @@ AMPLIFY="{\
 \"defaultEditor\":\"code\"\
 }"
 
-# VUECONFIG ="{\ 
-# \” SourceDir \”：\” src \”、\ 
-# \” DistributionDir \”：\” build \”、\ 
-# \” BuildCommand \”：\” npm run-script build \”、\ 
-# \” StartCommand \”：\” npm run-script start \” \ 
-# }"
-
-FRONTEND="{\
-\” frontend \”：\” javascript \”、\ 
-\” framework \”：\” vue \”、\ 
-\” config \”：{\ 
+VUECONFIG ="{\ 
 \” SourceDir \”：\” src \”、\ 
 \” DistributionDir \”：\” build \”、\ 
 \” BuildCommand \”：\” npm run-script build \”、\ 
 \” StartCommand \”：\” npm run-script start \” \ 
-}\ 
+}"
+
+FRONTEND="{\
+\” frontend \”：\” javascript \”、\ 
+\” framework \”：\” vue \”、\ 
+\” config \”："${VUECONFIG}" \ 
 }"
 
 PROVIDERS="{\
-\"awscloudformation\":$AWSCLOUDFORMATIONCONFIG\
+\"awscloudformation\": "${AWSCLOUDFORMATIONCONFIG}" \
 }"
 
 CODEGEN="{\
