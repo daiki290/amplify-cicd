@@ -37,6 +37,7 @@ jobs:
           npm install -g @aws-amplify/cli --unsafe-perm=true
           less ~/.aws/config
           bash ./init.sh
+          amplify push --yes
           amplify codegen
         env:
           accessKeyId: ${{ secrets.AMPLIFY_CICD_ACCESS_KEY }}
