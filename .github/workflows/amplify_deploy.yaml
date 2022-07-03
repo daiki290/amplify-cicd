@@ -32,9 +32,7 @@ jobs:
       - name: Install Amplify CLI & Deploying Project
         run: |     
           npm install -g @aws-amplify/cli --unsafe-perm=true
-          pwd
-          ls
-          sh ./init.sh
+          bash ./init.sh
       # - name: Configure AWS credentials
       #   uses: aws-actions/configure-aws-credentials@v1
       #   with:

@@ -48,4 +48,4 @@ amplify init \
 --providers $PROVIDERS \
 --yes
 
-# amplify push --codegen $CODEGEN --yes
+amplify push --codegen $CODEGEN --yes
