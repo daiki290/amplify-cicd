@@ -17,7 +17,7 @@ AMPLIFY="{\
 \"defaultEditor\":\"code\"\
 }"
 
-VUECONFIG ="{\ 
+VUECONFIG="{\ 
 \” SourceDir \”：\” src \”、\ 
 \” DistributionDir \”：\” build \”、\ 
 \” BuildCommand \”：\” npm run-script build \”、\ 
