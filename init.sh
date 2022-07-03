@@ -5,7 +5,7 @@ IFS='|'
 AWSCLOUDFORMATIONCONFIG="{\
 \"configLevel\":\"project\",\
 \"useProfile\":true,\
-\"profileName\":\"default\",\
+\"profileName\":\"amplify-cicd-user\",\
 \"accessKeyId\":\"${AWS_ACCESS_KEY_ID}\",\
 \"secretAccessKey\":\"${AWS_SECRET_ACCESS_KEY}\",\
 \"region\":\"ap-northeast-1\"\
@@ -48,3 +48,4 @@ amplify init \
 --providers $PROVIDERS \
 --yes
 
+amplify push function --yes
