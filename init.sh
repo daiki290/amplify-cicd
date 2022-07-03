@@ -18,29 +18,21 @@ AMPLIFY="{\
 }"
 
 VUECONFIG="{\ 
-\” SourceDir \”：\” src \”、\ 
-\” DistributionDir \”：\” build \”、\ 
-\” BuildCommand \”：\” npm run-script build \”、\ 
-\” StartCommand \”：\” npm run-script start \” \ 
+\” SourceDir \”:\” src \”、\ 
+\” DistributionDir \”:\” build \”、\ 
+\” BuildCommand \”:\” npm run-script build \”、\ 
+\” StartCommand \”:\” npm run-script start \” \ 
 }"
 
 FRONTEND="{\
-\” frontend \”：\” javascript \”、\ 
-\” framework \”：\” vue \”、\ 
-\” config \”：\"${VUECONFIG}\" \ 
+\” frontend \”:\” javascript \”、\ 
+\” framework \”:\” vue \”、\ 
+\” config \”: $VUECONFIG \ 
 }"
 
 PROVIDERS="{\
-\"awscloudformation\": \"${AWSCLOUDFORMATIONCONFIG}\" \
+\"awscloudformation\": $AWSCLOUDFORMATIONCONFIG \
 }"
-
-CODEGEN="{\
-\”generateCode\”:true,\
-\”codeLanguage\”:\”typescript\”,\
-\”fileNamePattern\”:\”src/graphql/**/*.ts\”,\
-\”generatedFileName\”:\”API\”,\
-\”generateDocs\”:true\
-}”
 
 amplify init \
 --amplify $AMPLIFY \
