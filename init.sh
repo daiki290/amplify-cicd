@@ -34,10 +34,10 @@ PROVIDERS="{\
 \"awscloudformation\": $AWSCLOUDFORMATIONCONFIG \
 }"
 
-amplify init \
+amplify configure project \
 --amplify $AMPLIFY \
 --frontend $FRONTEND \
 --providers $PROVIDERS \
 --yes
 
-amplify push function --yes
+amplify push --yes
