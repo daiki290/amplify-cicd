@@ -11,6 +11,9 @@ jobs:
       matrix:
         node_version: [12.x]
     runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AMPLIFY_CICD_ACCESS_KEY }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AMPLIFY_CICD_SECRET_KEY }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -27,16 +30,13 @@ jobs:
         with:
           version: ${{ matrix.node_version }}
       - name: Install Amplify CLI & Deploying Project
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AMPLIFY_CICD_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AMPLIFY_CICD_SECRET_KEY }}
         run: |     
           npm install -g @aws-amplify/cli --unsafe-perm=true
           pwd
           ls
           sh ./init.sh
+          echo AWS_ACCESS_KEY_ID
           sh ./push.sh
-          amplify codegen
       # - name: Configure AWS credentials
       #   uses: aws-actions/configure-aws-credentials@v1
       #   with:
