@@ -15,7 +15,7 @@ AMPLIFY="{\
 \"envName\":\"dev\",\
 \"defaultEditor\":\"code\"\
 }"
-VUECTCONFIG ="{\ 
+VUECONFIG ="{\ 
 \” SourceDir \”：\” src \”、\ 
 \” DistributionDir \”：\” build \”、\ 
 \” BuildCommand \”：\” npm run-script build \”、\ 
@@ -24,7 +24,7 @@ VUECTCONFIG ="{\
 FRONTEND="{\
 \” frontend \”：\” javascript \”、\ 
 \” framework \”：\” vue \”、\ 
-\” config \”：$ VUECTCONFIG \ 
+\” config \”：$VUECONFIG \ 
 }"
 PROVIDERS="{\
 \"awscloudformation\":$AWSCLOUDFORMATIONCONFIG\
