@@ -4,7 +4,7 @@ IFS='|'
 
 AWSCLOUDFORMATIONCONFIG="{\
 \"configLevel\":\"project\",\
-\"useProfile\":true,\
+\"useProfile\":false,\
 \"profileName\":\"amplify-cicd-user\",\
 \"accessKeyId\":\"${AWS_ACCESS_KEY_ID}\",\
 \"secretAccessKey\":\"${AWS_SECRET_ACCESS_KEY}\",\
