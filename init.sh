@@ -27,11 +27,11 @@ VUECONFIG="{\
 FRONTEND="{\
 \” frontend \”：\” javascript \”、\ 
 \” framework \”：\” vue \”、\ 
-\” config \”："${VUECONFIG}" \ 
+\” config \”：\"${VUECONFIG}\" \ 
 }"
 
 PROVIDERS="{\
-\"awscloudformation\": "${AWSCLOUDFORMATIONCONFIG}" \
+\"awscloudformation\": \"${AWSCLOUDFORMATIONCONFIG}\" \
 }"
 
 CODEGEN="{\
