@@ -27,8 +27,11 @@ jobs:
       - name: Install Amplify CLI & Deploying Project
         run: |     
           npm install -g @aws-amplify/cli --unsafe-perm=true
-          aws s3 ls
           bash ./init.sh
+        env:
+          accessKeyId: ${{ secrets.AMPLIFY_CICD_ACCESS_KEY }}
+          secretAccessKey: ${{ secrets.AMPLIFY_CICD_SECRET_KEY }}
+          region: 'ap-northeast-1'
       # - name: Configure AWS credentials
       #   uses: aws-actions/configure-aws-credentials@v1
       #   with:
