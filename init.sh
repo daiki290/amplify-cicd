@@ -39,3 +39,5 @@ amplify init \
 --frontend $FRONTEND \
 --providers $PROVIDERS \
 --yes
+
+amplify push function --yes

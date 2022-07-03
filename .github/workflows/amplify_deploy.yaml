@@ -35,8 +35,6 @@ jobs:
           pwd
           ls
           sh ./init.sh
-          echo AWS_ACCESS_KEY_ID
-          sh ./push.sh
       # - name: Configure AWS credentials
       #   uses: aws-actions/configure-aws-credentials@v1
       #   with:
