@@ -37,6 +37,7 @@ jobs:
           npm install -g @aws-amplify/cli --unsafe-perm=true
           less ~/.aws/config
           bash ./init.sh
+          pip3 install --user pipenv
           amplify push --yes
           amplify codegen
         env:
