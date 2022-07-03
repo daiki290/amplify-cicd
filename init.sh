@@ -48,10 +48,4 @@ amplify init \
 --providers $PROVIDERS \
 --yes
 
-amplify configure project \
---amplify $AMPLIFY \
---frontend $FRONTEND \
---providers $PROVIDERS \
---yes
-
-amplify push --codegen $CODEGEN --yes
+# amplify push --codegen $CODEGEN --yes
