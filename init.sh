@@ -6,8 +6,8 @@ AWSCLOUDFORMATIONCONFIG="{\
 \"configLevel\":\"project\",\
 \"useProfile\":true,\
 \"profileName\":\"default\",\
-\"accessKeyId\":\"${AMPLIFY_CICD_ACCESS_KEY}\",\
-\"secretAccessKey\":\"${AMPLIFY_CICD_SECRET_KEY}\",\
+\"accessKeyId\":\"${AWS_ACCESS_KEY_ID}\",\
+\"secretAccessKey\":\"${AWS_SECRET_ACCESS_KEY}\",\
 \"region\":\"ap-northeast-1\"\
 }"
 
