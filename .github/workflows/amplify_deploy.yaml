@@ -32,7 +32,7 @@ jobs:
           pwd
           ls
           sh ./init.sh
-          SH ./push.sh
+          sh ./push.sh
           amplify codegen
       # - name: Configure AWS credentials
       #   uses: aws-actions/configure-aws-credentials@v1
