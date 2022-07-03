@@ -31,8 +31,8 @@ jobs:
           npm install -g @aws-amplify/cli --unsafe-perm=true
           pwd
           ls
-          bash init.sh
-          bash push.sh
+          sh ./init.sh
+          SH ./push.sh
           amplify codegen
       # - name: Configure AWS credentials
       #   uses: aws-actions/configure-aws-credentials@v1
