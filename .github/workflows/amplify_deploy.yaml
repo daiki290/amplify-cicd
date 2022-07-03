@@ -20,7 +20,7 @@ jobs:
       - name: Check aws command
         run: |
           aws s3 ls
-      - name: setup aws cli
-        run: |
-          npm install -g @aws-amplify/cli --unsafe-perm=true
-          amplify codegen
+      # - name: setup aws cli
+      #   run: |
+      #     npm install -g @aws-amplify/cli --unsafe-perm=true
+      #     amplify codegen
