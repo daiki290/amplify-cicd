@@ -7,6 +7,9 @@ on:
     
 jobs:
   codege:
+    strategy:
+      matrix:
+        node_version: [12.x]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,7 +23,12 @@ jobs:
       - name: Check aws command
         run: |
           aws s3 ls
-      # - name: setup aws cli
-      #   run: |
-      #     npm install -g @aws-amplify/cli --unsafe-perm=true
-      #     amplify codegen
+      
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          version: ${{ matrix.node_version }}
+      - name: setup aws cli
+        run: |
+          npm install -g @aws-amplify/cli --unsafe-perm=true
+          amplify codegen
