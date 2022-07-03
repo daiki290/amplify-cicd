@@ -10,6 +10,4 @@ CODEGEN="{\
 \"generateDocs\":true\
 }"
 
-amplify push \
---codegen $CODEGEN \
---yes
+amplify push function --yes
