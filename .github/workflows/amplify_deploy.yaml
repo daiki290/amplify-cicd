@@ -32,11 +32,9 @@ jobs:
       - name: Install Amplify CLI & Deploying Project
         run: |     
           npm install -g @aws-amplify/cli --unsafe-perm=true
-          less ~/.aws/config
           bash ./init.sh
           pip3 install --user pipenv
-          amplify push --yes
-          amplify codegen
+          bash ./push.sh
         env:
           accessKeyId: ${{ secrets.AMPLIFY_CICD_ACCESS_KEY }}
           secretAccessKey: ${{ secrets.AMPLIFY_CICD_SECRET_KEY }}

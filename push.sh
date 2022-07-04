@@ -11,3 +11,4 @@ CODEGEN="{\
 }"
 
 amplify push function --yes
+amplify push --codegen $CODEGEN --yes
