@@ -27,5 +27,13 @@ export type AmplifyDependentResourcesAttributes = {
             "CloudFrontSecureURL": "string",
             "CloudFrontOriginAccessIdentity": "string"
         }
+    },
+    "function": {
+        "testfunc": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
+        }
     }
 }
