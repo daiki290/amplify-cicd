@@ -12,4 +12,4 @@ CODEGEN="{\
 
 amplify push function --yes
 
-amplify publish --yes
+amplify publish --yes --force
