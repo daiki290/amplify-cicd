@@ -1,0 +1,41 @@
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    
+jobs:
+  codege:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AMPLIFY_CICD_ACCESS_KEY }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AMPLIFY_CICD_SECRET_KEY }}
+      AWS_DEFAULT_REGION: 'ap-northeast-1'
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Install AWS CLI & Configuring Profile Credentials
+        run: |
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install --update
+          aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID --profile default
+          aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY --profile default
+          aws configure set default.region ap-northeast-1
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: npm
+      - name: Install Amplify CLI & Deploying Project
+        run: |     
+          npm install -g @aws-amplify/cli --unsafe-perm=true
+          bash ./init.sh
+          pip3 install --user pipenv
+          bash ./push.sh
+        env:
+          accessKeyId: ${{ secrets.AMPLIFY_CICD_ACCESS_KEY }}
+          secretAccessKey: ${{ secrets.AMPLIFY_CICD_SECRET_KEY }}
+          region: 'ap-northeast-1'
